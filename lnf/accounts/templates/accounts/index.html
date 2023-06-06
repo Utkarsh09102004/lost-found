@@ -1,28 +1,32 @@
-
 <!DOCTYPE html>
 {% load static %}
 <html>
 <head>
   <title>Lost and Found Portal</title>
-  <link rel="icon" type="image/png" href="images/temp logo.jpg"/>  
-  {% block css %} <link rel="stylesheet" href="{% static 'accounts/css/style01.css' %}">   {% endblock css %}
+  <link rel="icon" type="image/png" href="images/temp logo.jpg"/>
+  {% block css %} <link rel="stylesheet" href="{% static 'accounts/css/style_main.css' %}">   {% endblock css %}
+
+
 </head>
 <body class>
+
+  <!-- ----------nav---------- -->
   <nav class="navbar antiquewhite">
     <ul>
     <li><img class="smol" src="/images/temp logo.jpg" alt=""></li>
-      <li class="mtop"><a href="index.html">Home</a></li>
-      <li class="mtop"><a href="lost_items.html">Lost Items</a></li>
-      <li class="mtop"><a href="found_items.html">Found Items</a></li>
-      <li class="mtop"><a href="report_lost_item.html">Report Lost Item</a></li>
-      <li class="mtop"><a href="report_found_item.html">Report Found Item</a></li>
-      <li class="mtop"><a href="claim_item.html">Claim Item</a></li>
-      <li class="mtop"><a href="faq.html">FAQ</a></li>
+      <li class="mtop"><a href="{% url 'index' %}">Home</a></li>
+      <li class="mtop"><a href="{% url 'lost_items' %}">Lost Items</a></li>
+      <li class="mtop"><a href="{% url 'found_items' %}">Found Items</a></li>
+      <li class="mtop"><a href="{% url 'report_lost_items' %}">Report Lost Item</a></li>
+      <li class="mtop"><a href="{% url 'report_found_items' %}">Report Found Item</a></li>
+      <li class="mtop"><a href="{% url 'claim' %}">Claim Item</a></li>
+      <li class="mtop"><a href="{% url 'faq' %}">FAQ</a></li>
+      <li class="mtop"><a href="{% url 'contact' %}">Contact Us</a></li>
       <li class="mtop"><a href="{% url 'logout' %}">Logout</a></li>
     </ul>
 </nav>
   
-
+<!--x----------nav----------x-->
 
 <main>
     <div
@@ -63,6 +67,7 @@
         </div>
 
          <!-- first one ends here -->
+         <!-- Data to be updated from backend -->
         <div class="col">
           <div class="card h-100 shadow-sm antiquewhite">
             <img src="/images/school bag.jpg" alt="" class="ddimg">
