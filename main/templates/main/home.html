@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    #home {
+        background-color: #fff;
+        border-radius: 20px;
+        width: 80%;
+        height: 70vh;
+        margin: 5% auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .comp {
+        border: 4px solid transparent;
+        width: 200px;
+        height: 150px;
+        margin-top: 20%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 20px;
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .comp:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-color: #333;
+    }
+
+    .comp a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2em;
+        transition: color 0.3s;
+    }
+
+    .comp a:hover {
+        color: #555;
+    }
+</style>
+
+<h1>
+    Why are you here, {{ name }}? 
+</h1>
+
+<div id="home">
+    
+    <div class="comp" style="background-color: #ddd;">
+        <a href="{% url 'loser' %}" >LOSER</a>
+    </div>
+    <div class="comp" style="background-color: #ddd;">
+        <a href="{% url 'founder' %}">Finder</a>
+    </div>
+    <div class="comp" style="background-color: #ddd;">
+        <a href="{% url 'status' %}">See Status</a>
+    </div>
+</div>
+
+{% endblock content %}

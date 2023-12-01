@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(229, 228, 228);
+    /* margin-top:700px; */
+}
+
+h1 {
+    color:red;
+}
+#home {
+    background:white;
+}
+#home .comp{
+    width:200px;
+    height: 150px;
+    border: solid 1px;
+}

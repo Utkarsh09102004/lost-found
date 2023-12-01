@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    textarea,
+    input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">Name:</label>
+        {{ form.name }}
+
+        <label for="{{ form.description.id_for_label }}">Description:</label>
+        {{ form.description }}
+
+        <label for="{{ form.location.id_for_label }}">Location:</label>
+        {{ form.location }}
+
+        <label for="{{ form.date_found.id_for_label }}">Date Found:</label>
+        {{ form.date_found }}
+
+        <label for="{{ form.image.id_for_label }}">Image:</label>
+        {{ form.image }}
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock %}
